@@ -19,7 +19,7 @@ const ShaperSchema = new Schema({
 
 // Make a virtual url for each model
 ShaperSchema.virtual('url').get(function () {
-  return `/shapers/${this._id}`;
+  return `/shaper/${this._id}`;
 });
 
 module.exports = mongoose.model('Shaper', ShaperSchema);

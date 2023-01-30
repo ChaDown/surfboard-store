@@ -2,9 +2,7 @@ extends layout
 
 block content 
 
-  h1= title 
-
-  dl
+  div(class="shapers-container")
    each shaper in shapers 
-    dt= shaper.shaperName 
-    dd= shaper.location 
+     a(href=shaper.url)
+      img(src=shaper.image, alt=shaper.shaperName class="shaper-img")

@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+ 
+  div(class="shaper-details")
+    img(src=shaper.image, alt=shaper.shaperName class="shaper-detail")
+    p(class="shaper-detail") #{shaper.shaperName} is a shaper based out of #{shaper.location}. We currently have the following models in stock. Click on the model for more details. 
+
+  dl(class="model-list") 
+     each model in models 
+       div(class="model-list-tile")
+          dt #{shaper.shaperName} - #{model.model}
+          dd 
+            ul(class="model-list-ul") 
+              img(src=model.image, alt=`Surfboard ${model.shaper.shaperName} - ${model.model}` class="surfboard-list-img")
+              li #{model.style}
+              li €#{model.price}
+              a(href=model.url) Check stock

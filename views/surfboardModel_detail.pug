@@ -2,12 +2,19 @@ extends layout
 
 block content 
 
+  div(class="model-container")
     h1 #{model.shaper.shaperName} - #{model.model} 
 
+    img(src=model.image alt=`${model.shaper.shaperName} - ${model.model} `)
+  
+  if items.length
     p We currently have the following sizes in stock for the  #{model.model}
 
     ul 
       each board in items 
        li #{board.size}
+  
+  else 
+    p This model is currently out of stock
 
 

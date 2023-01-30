@@ -1,6 +1,7 @@
 body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   margin: 0;
+  min-height: 100vh;
 }
 
 a {
@@ -22,8 +23,8 @@ nav ul {
   padding: 10px;
 }
 
-.model-list-tile {
-  width: 40vw;
+.model-list-tile,
+.model-container {
   background-color: white;
   border-radius: 5%;
   margin: 20px;
@@ -35,6 +36,14 @@ nav ul {
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
   box-shadow: 0 0 3px #ccc;
+}
+
+.model-list-tile {
+  width: 40vw;
+}
+
+.model-container {
+  width: 90vw;
 }
 
 .surfboard-list-img {
@@ -51,4 +60,92 @@ nav ul {
 .model-list-ul {
   padding: 0;
   list-style: none;
+}
+
+.home-img {
+  width: 100vw;
+  max-height: 43vh;
+  margin-top: 2px;
+  transition: opacity 1s ease-in 0.1s;
+}
+
+.home-img:hover {
+  opacity: 0.6;
+}
+
+.home-img-container {
+  position: relative;
+}
+
+.home-img-container button {
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
+  background-color: #ff0000;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease-in 0.1s;
+}
+
+.home-img-container button:hover {
+  transform: scale(1.05, 1.05);
+  color: #ff0000;
+  background-color: white;
+  border: solid 1px red;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+btn:hover {
+  cursor: pointer;
+}
+
+.shapers-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.shaper-img {
+  max-width: 45vw;
+  height: 25vh;
+  border: 0.5px solid gainsboro;
+  border-radius: 5px;
+  margin: 10px;
+  transition: transform 0.25s ease-in 0.1s;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
+}
+
+.shaper-img:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.shaper-details {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.shaper-detail {
+  width: 40vw;
+}
+
+.add-sidebar {
+  width: 50vw;
+  height: 100vh;
+  z-index: 99;
 }
