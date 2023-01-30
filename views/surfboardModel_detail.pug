@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+
+    h1 #{model.shaper.shaperName} - #{model.model} 
+
+    p We currently have the following sizes in stock for the  #{model.model}
+
+    ul 
+      each board in items 
+       li #{board.size}
+
+
