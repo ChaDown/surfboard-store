@@ -5,14 +5,12 @@ block content
   dl(class="model-list") 
      each model in model_list 
        div(class="model-list-tile")
-          dt #{model.shaper.shaperName} - #{model.model}
-          dd 
-            ul(class="model-list-ul") 
-              img(src=model.image, alt=`Surfboard ${model.shaper.shaperName} - ${model.model}` class="surfboard-list-img")
-              li #{model.style}
-              li €#{model.price}
-              a(href=model.url) Check stock
+          div #{model.shaper.shaperName} - #{model.model}
+          img(src=model.image, alt=`Surfboard ${model.shaper.shaperName} - ${model.model}` class="surfboard-list-img")
+          div.model-info  #{model.style}
+          div.model-info  €#{model.price}
+          div.model-info 
+            a(href=model.url) Check stock
 
 
-     
 

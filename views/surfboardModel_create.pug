@@ -1,9 +1,10 @@
 extends layout
 
 block content
-  h1= title
+  
 
-  form(method='POST' action='' enctype="multipart/form-data")
+  form(method='POST' action='' enctype="multipart/form-data" class="create-form")
+    h1= title
     div.form-group
       label(for='model') Model name:
       input#model.form-control(type='text', placeholder='Ghost' name='model' required='true' value=(undefined===model ? '' : model.model) )
@@ -18,21 +19,22 @@ block content
     div.form-group 
         label(for="price") Price: 
         input(type="number" placeholder=699 name="price" require="true" value=(model === undefined ? "" : model.price)) 
+    label Style:    
+    div.form-group(class="radio-form") 
+       
+        input(type="radio" name="style" value="Longboard")
+        label(for="Longboard") Longboard
+        input( type="radio"  name="style" value="Shortboard")
+        label( for="Shortboard") Shortboard
+        input( type="radio"  name="style" value="Fish")
+        label( for="Fish") Fish
+        input( type="radio"  name="style" value="Foamboard")
+        label( for="Foamboard") Foamboard
+    div.form-group 
+     label(for='image') Board Image:
+     input#image.form-control(type='file' name='image' value=(undefined===model ? '' : model.image) )
 
-    label Style:
-        <input type="radio" name="style" value="Longboard">
-        <label for="html">Longboard</label><br>
-        <input type="radio"  name="style" value="Shortboard">
-        <label for="css">Shortboard</label><br>
-        <input type="radio"  name="style" value="Fish">
-        <label for="javascript">Fish</label>
-        <input type="radio"  name="style" value="Foamboard">
-        <label for="javascript">Foamboard</label>
-    
-    label(for='image') Board Image:
-      input#image.form-control(type='file' name='image' value=(undefined===model ? '' : model.image) )
-
-    button.btn.btn-primary(type='submit') Submit
+    button.btn.btn-primary(type='submit' class="submit-file-btn") Submit
 
   if errors
     ul

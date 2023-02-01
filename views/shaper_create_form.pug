@@ -1,17 +1,19 @@
 extends layout
 
 block content
-  h1=title
-
-  form(method='POST' action='' enctype="multipart/form-data")
+  
+  form(method='POST' action='' enctype="multipart/form-data" class="create-form")
+    h1=title
     div.form-group
       label(for='shaperName') Shaper/Brand Name:
       input#shaperName.form-control(type='text' placeholder='Channel Islands' name='shaperName' required='true' value=(undefined===shaper ? '' : shaper.shaperName) )
+    div.form-group  
       label(for='location') Location:
       input#location.form-control(type='text' placeholder='California' name='location' required='true' value=(undefined===shaper ? '' : shaper.location))
+    div.form-group  
       label(for='image') Logo Image:
-      input#image.form-control(type='file' name='image' value=(undefined===shaper ? '' : shaper.image) )
-    button.btn.btn-primary(type='submit') Submit
+      input#image.form-control(class="add-file-btn" type='file' name='image' value=(undefined===shaper ? '' : shaper.image) )
+    button.btn.btn-primary(type='submit' class="submit-file-btn") Submit
   if errors
     ul
       for error in errors

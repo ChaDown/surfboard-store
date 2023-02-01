@@ -5,15 +5,17 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body 
     nav 
+      a(href="/" class="logo-a")
+        img(src="https://surfboardbucket.s3.eu-west-1.amazonaws.com/surfstock.png", alt="surf-stock logo" class="logo-img")
       ul 
         li 
-          a(href="/") Home 
+          a(href="/surfboardModel") Models
         li 
-          a(href="/surfboardModel") Board Models
-        li 
-          a(href="/shaper") Shapers
-
-        span 
-           a(href="/create") +
+          a(href="/shaper") Shapers  
+      div 
+        a(href="/create") <ion-icon name="settings-outline"></ion-icon>
   
     block content
+
+  script(type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+  script(nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js")

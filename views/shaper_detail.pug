@@ -3,19 +3,19 @@ extends layout
 block content 
  
   div(class="shaper-details")
-    img(src=shaper.image, alt=shaper.shaperName class="shaper-detail")
-    p(class="shaper-detail") #{shaper.shaperName} is a shaper based out of #{shaper.location}. We currently have the following models in stock. Click on the model for more details. 
+    img(src=shaper.image, alt=shaper.shaperName class="shaper-detail ")
+    p(class="shaper-detail shaper-detail-text") #{shaper.shaperName} is a shaper based out of #{shaper.location}. We currently have the following models in store. Click on the model for more details on what specific sizes are in stock at the moment. 
 
   dl(class="model-list") 
    if models.length
      each model in models 
-       div(class="model-list-tile")
-          dt #{shaper.shaperName} - #{model.model}
-          dd 
-            ul(class="model-list-ul") 
-              img(src=model.image, alt=`Surfboard ${model.shaper.shaperName} - ${model.model}` class="surfboard-list-img")
-              li #{model.style}
-              li €#{model.price}
-              a(href=model.url) Check stock
+      div(class="model-list-tile")
+          div #{shaper.shaperName} - #{model.model}
+          img(src=model.image, alt=`Surfboard ${shaper.shaperName} - ${model.model}` class="surfboard-list-img")
+          div.model-info  #{model.style}
+          div.model-info  €#{model.price}
+          div.model-info 
+            a(href=model.url) Check stock
+    
    else 
-     p We currently don't have any #{shaper.shaperName} boards in stock.            
+     p.model-list-tile We currently don't have any #{shaper.shaperName} boards in stock.            

@@ -1,9 +1,11 @@
 extends layout
 
 block content
-  h1= title
+  
 
-  form(method='POST' action='')
+  form(method='POST' action=''  class="create-form")
+   h1= title
+   div.form-group
     label(for='model') Model:
     select#model.form-control(type='select', placeholder='Select model' name='model' required='true' )
      for model in models
@@ -11,11 +13,11 @@ block content
             option(value=model_instance._id selected=(model_instance._id.toString()===model.model._id.toString() ? 'selected' : false) ) #{`${model.shaper.shaperName} - ${model.model}`}
          else
             option(value=model._id) #{`${model.shaper.shaperName} - ${model.model}`}
-    
+   div.form-group 
     label(for='size') Board size:
-      input#size.form-control(type='text' name='size' value=(undefined===model ? '' : model.size) placeholder="5'9")
+    input#size.form-control(type='text' name='size' value=(undefined===model ? '' : model.size) placeholder="5'9")
 
-    button.btn.btn-primary(type='submit') Submit
+   button.btn.btn-primary(type='submit' class="submit-file-btn") Submit
 
   if errors
     ul
