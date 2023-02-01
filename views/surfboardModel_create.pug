@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='' enctype="multipart/form-data")
+    div.form-group
+      label(for='model') Model name:
+      input#model.form-control(type='text', placeholder='Ghost' name='model' required='true' value=(undefined===model ? '' : model.model) )
+    div.form-group
+      label(for='shaper') Shaper:
+      select#shaper.form-control(type='select', placeholder='Select Shaper' name='shaper' required='true' )
+        for shaper in shapers
+          if model
+            option(value=shaper._id selected=(shaper._id.toString()===model.shaper._id.toString() ? 'selected' : false) ) #{shaper.shaperName}
+          else
+            option(value=shaper._id) #{shaper.shaperName}
+    div.form-group 
+        label(for="price") Price: 
+        input(type="number" placeholder=699 name="price" require="true" value=(model === undefined ? "" : model.price)) 
+
+    label Style:
+        <input type="radio" name="style" value="Longboard">
+        <label for="html">Longboard</label><br>
+        <input type="radio"  name="style" value="Shortboard">
+        <label for="css">Shortboard</label><br>
+        <input type="radio"  name="style" value="Fish">
+        <label for="javascript">Fish</label>
+        <input type="radio"  name="style" value="Foamboard">
+        <label for="javascript">Foamboard</label>
+    
+    label(for='image') Board Image:
+      input#image.form-control(type='file' name='image' value=(undefined===model ? '' : model.image) )
+
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
+    
+      hr
+  

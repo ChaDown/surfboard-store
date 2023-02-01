@@ -7,6 +7,7 @@ block content
     p(class="shaper-detail") #{shaper.shaperName} is a shaper based out of #{shaper.location}. We currently have the following models in stock. Click on the model for more details. 
 
   dl(class="model-list") 
+   if models.length
      each model in models 
        div(class="model-list-tile")
           dt #{shaper.shaperName} - #{model.model}
@@ -16,3 +17,5 @@ block content
               li #{model.style}
               li €#{model.price}
               a(href=model.url) Check stock
+   else 
+     p We currently don't have any #{shaper.shaperName} boards in stock.            

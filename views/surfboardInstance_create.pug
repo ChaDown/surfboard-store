@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    label(for='model') Model:
+    select#model.form-control(type='select', placeholder='Select model' name='model' required='true' )
+     for model in models
+         if model_instance
+            option(value=model_instance._id selected=(model_instance._id.toString()===model.model._id.toString() ? 'selected' : false) ) #{`${model.shaper.shaperName} - ${model.model}`}
+         else
+            option(value=model._id) #{`${model.shaper.shaperName} - ${model.model}`}
+    
+    label(for='size') Board size:
+      input#size.form-control(type='text' name='size' value=(undefined===model ? '' : model.size) placeholder="5'9")
+
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
+    
+      hr
+  

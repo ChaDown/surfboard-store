@@ -9,6 +9,9 @@ const surfboardModelRouter = require('./routes/surfboardModel');
 const shaperRouter = require('./routes/shaper');
 const createRouter = require('./routes/create');
 
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
 const app = express();
 
 // Set up mongoose connection

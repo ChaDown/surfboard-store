@@ -50,6 +50,10 @@ nav ul {
   max-width: 100%;
 }
 
+.model-detail-image {
+  max-width: 100%;
+}
+
 .model-list {
   display: flex;
   flex-wrap: wrap;
@@ -127,6 +131,8 @@ btn:hover {
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
   box-shadow: 0 0 3px #ccc;
+  object-fit: contain;
+  aspect-ratio: 285.5/142.75;
 }
 
 .shaper-img:hover {

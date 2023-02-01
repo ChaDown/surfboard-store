@@ -1,0 +1,29 @@
+extends layout 
+
+block content 
+  div.delete-form 
+   h1.form-title Delete Shaper and Shaper's models/stock
+    form(action="/create/delete/shaper" method="POST") 
+     label(for="shaper") Shaper: 
+     select(name="shaper" type="select")
+      for shaper in shapers 
+       option(value=shaper._id name="shaper") #{shaper.shaperName} 
+     button(type="submit") Remove
+
+  div.delete-form 
+   h1.form-title Delete Model and Model's stock
+    form(action="/create/delete/model" method="POST") 
+     label(for="model") model: 
+     select(name="model" type="select")
+      for model in models 
+       option(value=model._id name="model") #{model.model} 
+     button(type="submit") Remove
+
+  div.delete-form 
+   h1.form-title Delete single board from stock
+    form(action="/create/delete/instance" method="POST") 
+     label(for="instance") Board: 
+     select(name="instance" type="select")
+      for instance in instances 
+       option(value=instance._id name="instance") #{`${instance.model ? instance.model.shaper.shaperName : ""} - ${instance.model ? instance.model.model : ""} - ${instance.size}`} 
+     button(type="submit") Remove

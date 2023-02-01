@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='' enctype="multipart/form-data")
+    div.form-group
+      label(for='shaperName') Shaper/Brand Name:
+      input#shaperName.form-control(type='text' placeholder='Channel Islands' name='shaperName' required='true' value=(undefined===shaper ? '' : shaper.shaperName) )
+      label(for='location') Location:
+      input#location.form-control(type='text' placeholder='California' name='location' required='true' value=(undefined===shaper ? '' : shaper.location))
+      label(for='image') Logo Image:
+      input#image.form-control(type='file' name='image' value=(undefined===shaper ? '' : shaper.image) )
+    button.btn.btn-primary(type='submit') Submit
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
