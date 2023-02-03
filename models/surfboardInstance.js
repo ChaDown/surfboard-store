@@ -12,8 +12,4 @@ const surfboardInstanceSchema = new Schema({
   },
 });
 
-// surfboardInstanceSchema.virtual('url').get(function () {
-//   return `/surfboard-instance/${this._id}`;
-// });
-
 module.exports = mongoose.model('SurfboardInstance', surfboardInstanceSchema);

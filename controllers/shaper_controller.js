@@ -1,9 +1,6 @@
 const SurfboardModel = require('../models/surfboardModel');
-const SurfboardInstance = require('../models/surfboardInstance');
 const Shaper = require('../models/shaper');
 const async = require('async');
-const { body, validationResult } = require('express-validator');
-const { Schema } = require('mongoose');
 
 exports.shaper_list = function (req, res, next) {
   Shaper.find().exec((err, shapers) => {

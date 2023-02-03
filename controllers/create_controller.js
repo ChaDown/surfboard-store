@@ -268,34 +268,3 @@ exports.delete_shaper_post = function (req, res, next) {
     }
   );
 };
-
-//   // Find models with this shaper
-//   SurfboardModel.find({ shaper: req.body.shaper }, (err, results) => {
-//     if (err) return next(err);
-
-//     // For each model, delete all instances of it
-//     results.forEach((res) => {
-//       SurfboardInstanceModel.findByIdAndDelete(res._id).exec((err) => {
-//         if (err) return next(err);
-//       });
-//     });
-//   });
-
-//   async.series(
-//     {
-//       instance(cb) {
-//         SurfboardInstanceModel.deleteMany({
-//           model: req.body.model,
-//         }).exec(cb);
-//       },
-//       model(cb) {
-//         SurfboardModel.findByIdAndDelete(req.body.model).exec(cb);
-//       },
-//       shaper(cb) {},
-//     },
-//     (err) => {
-//       if (err) return next(err);
-//       res.redirect('/create/delete');
-//     }
-//   );
-// };
