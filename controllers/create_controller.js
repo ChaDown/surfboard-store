@@ -157,10 +157,8 @@ exports.create_surfboardInstance_post = [
 
     surfboardInstanceModel.save((err) => {
       if (err) return next(err);
-      // Success!
-      // const model = SurfboardModel.find({ _id: req.body.model });
-      // console.log(model.url);
-      res.redirect('/');
+      //Success!
+      res.redirect(`/surfboardModel/${req.body.model}`);
     });
   },
 ];
@@ -207,7 +205,6 @@ exports.delete_instance_post = function (req, res, next) {
 };
 
 exports.delete_model_post = function (req, res, next) {
-  console.log(req.body, 'Received');
   async.parallel(
     {
       instance(cb) {

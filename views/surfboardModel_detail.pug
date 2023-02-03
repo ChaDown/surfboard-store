@@ -1,7 +1,7 @@
 extends layout 
 
 block content 
-
+ div.model-detail-container
   div(class="model-container")
     h1 #{model.shaper.shaperName} - #{model.model} 
 
@@ -13,8 +13,11 @@ block content
      ul 
       each board in items 
        li #{board.size}
-    
+
+     a(href="/create/instance") Click here to add stock for the #{model.shaper.shaperName} #{model.model}   
+     
     else 
-     p This model is currently out of stock
+     p This model is currently out of stock <br/><br/>
+      a(href="/create/instance") Click here to add stock for the #{model.shaper.shaperName} #{model.model} 
 
 

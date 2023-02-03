@@ -3,14 +3,12 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const surfboardModelRouter = require('./routes/surfboardModel');
 const shaperRouter = require('./routes/shaper');
 const createRouter = require('./routes/create');
-
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
 
 const app = express();
 
@@ -18,8 +16,7 @@ const app = express();
 const mongoose = require('mongoose');
 const { mainModule } = require('process');
 mongoose.set('strictQuery', 'false');
-const mongoDB =
-  XXXXXXX;
+const mongoDB = process.env.DB_KEY;
 
 main().catch((err) => console.log(err));
 async function main() {

@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Rampart+One&display=swap');
+
 body {
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px 'Quicksand', Helvetica, Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
   background-color: #9dbebb;
 }
 
+button,
+select {
+  font-family: 'Quicksand', sans-serif;
+}
+
 a {
   color: #468189;
   text-decoration: none;
+}
+
+button:hover,
+a:hover {
+  cursor: pointer;
 }
 
 nav a {
@@ -44,6 +56,12 @@ nav a:hover {
   color: #f4e9cd;
 }
 
+h2 {
+  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 ion-icon {
   font-size: 1.2rem;
 }
@@ -75,6 +93,12 @@ ion-icon {
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
   box-shadow: 0 0 3px #ccc;
+}
+
+.model-detail-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 .model-list-tile {
@@ -223,7 +247,13 @@ btn:hover {
   background-color: #031926;
   color: #f4e9cd;
   border-color: #f4e9cd;
-  border-radius: 5px;
+  border-radius: 15px;
+  transition: transform 0.2s ease-in 0.1s;
+  font-size: larger;
+}
+
+.create-btn:hover {
+  transform: scale(1.01, 1.01);
 }
 
 .create-form {
@@ -268,4 +298,15 @@ input::file-selector-button:hover,
 .radio-form {
   display: flex;
   flex-wrap: wrap;
+}
+
+.form-group-delete {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0px 10%;
+}
+
+.delete-field {
+  margin: 5px;
 }
