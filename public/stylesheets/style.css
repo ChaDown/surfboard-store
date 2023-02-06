@@ -144,17 +144,25 @@ ion-icon {
 
 .home-img {
   width: 100vw;
-  margin-top: 2px;
-  transition: opacity 1s ease-in 0.1s;
-  height: 45vh;
+  animation: 45s ease 0s normal none infinite zoom-in-zoom-out;
+  height: 48vh;
 }
 
-.home-img:hover {
-  opacity: 0.6;
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1.2, 1.2);
+  }
+  50% {
+    transform: scale(1.02, 1.02);
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+  }
 }
 
 .home-img-container {
   position: relative;
+  overflow: hidden;
 }
 
 .home-img-container button {
@@ -176,13 +184,6 @@ ion-icon {
   color: #031926;
   background-color: #f4e9cd;
   border: solid 1px #031926;
-}
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
 }
 
 btn:hover {
